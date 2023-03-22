@@ -27,8 +27,8 @@ jobs:
       - name: OIDC Login Azure Public Cloud with AzPowershell(enableAzPSSession true)
         uses: azure/login@v1
         with:
-          client-id: ${{secrets.AZURE_CLIENT_ID }}
-          client-secret: ${{secrets.AZURE_CLIENT_SECRET }}
-          tenant-id: ${{secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{secrets.AZURE_SUBSCRIPTIONS_ID }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTIONS_ID }}
           enable-AzPSSession: true
