@@ -1,0 +1,34 @@
+name: Sign In Test
+#Controls when the workflow will run
+on: 
+#Triggers the workflow on push or pull request events but only for the main branch
+push: 
+branches: [main]
+pull_request: 
+branches: [main]
+
+#Allows you to run this workflow manually from the Actions tab
+workflow_dispatch:
+
+permissions:
+id-token: write
+contents: read
+
+jobs:
+build:
+name: Windows Build
+runs-on: windows-latest
+
+# point of run: signing in through a service principle via github pipeline using workflow actions and signing in through 
+steps: 
+  - name: Checkout Action
+    uses: actions/checkout@v2
+
+  - name: OIDC Login Azure Public Cloud with AzPowershell(enableAzPSSession true)
+    uses: azure/login@v1
+      with:
+        client-id: ${{secrets.AZURE_CLIENT_ID }}
+        client-secret: ${{secrets.AZURE_CLIENT_SECRET }}
+        tenant-id: ${{secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{secrets.AZURE_SUBSCRIPTIONS_ID }}
+        enable-AzPSSession: true
