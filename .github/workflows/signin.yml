@@ -16,11 +16,17 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     steps:
-      - name: Checkout Action
-        uses: actions/checkout@v2
-
-      - name: Login to Azure
+     - name: Login to Azure
         uses: azure/login@v1
         with:
-          creds: '{"clientId":"${{ secrets.CLIENT_ID }}","clientSecret":"${{ secrets.CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true  
 
+     - name: Checkout Action
+       uses: actions/checkout@v2
+
+     
+          
