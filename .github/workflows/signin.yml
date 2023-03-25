@@ -15,7 +15,9 @@ jobs:
   build:
     name: Windows Build
     runs-on: windows-latest
-    if: github.event.ref == 'ref/heads/main'
+    defaults:
+      run:
+        working-directory: azure_scripts
     steps:
      - name: Login to Azure
        uses: azure/login@v1
