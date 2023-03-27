@@ -1,3 +1,4 @@
+
 function InstallModules{
     param([String[]]$names)
     $DebugPreference = 'Continue'
@@ -13,4 +14,7 @@ function InstallModules{
         }
     }
 }
-InstallModules -names "Az.Accounts", "Az.Resources", "Az.LogicApp"
+InstallModules -names "Az.Accounts", "Az.Resources", "Az.LogicApp", "Az"
+
+New-AzResourceGroup -Name "testing-resource-group-123" - Tag "change" -Location "eastus"
+#creating resource group to hold other resources in a single location
