@@ -28,10 +28,10 @@ jobs:
           enable-AzPSSession: true  
 
     - name: Run PS1 Script
-       run: ./azure_scripts/SignInScript.ps1
+      run: ./azure_scripts/SignInScript.ps1
 
-     - name: Checkout Action
-       uses: actions/checkout@v2
+    - name: Checkout Action
+      uses: actions/checkout@v2
 
      
           
