@@ -18,7 +18,7 @@ InstallModules -names "Az"
 
 
 
-New-AzResourceGroup -Name "testing-resource-group-123" -Tag @{Empty=$null;Department="change"} -Location "eastus"
+#New-AzResourceGroup -Name "testing-resource-group-123" -Tag @{Empty=$null;Department="change"} -Location "eastus"
 #creating resource group to hold other resources in a single location
 
 Get-AzStorageAccount -ResourceGroupName "testRG2" -Name "testrgtacc2"
