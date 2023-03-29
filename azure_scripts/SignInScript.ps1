@@ -21,7 +21,7 @@ InstallModules -names "Az"
 #New-AzResourceGroup -Name "testing-resource-group-123" -Tag @{Empty=$null;Department="change"} -Location "eastus"
 #creating resource group to hold other resources in a single location
 
-Get-AzStorageAccount -ResourceGroupName "testRG2" -Name "testrgtacc2"
+Get-AzStorageAccount -ResourceGroupName "testRG2" -Name "testrg2acc2"
 $account_name = "testrg2acc2"
 $account_key = "Kknhm690Wcrx+qJi3V8ENyl9BTxo4TVYqixPK3rgjvwMqcUAE3RUJA7a009ESaNQc92W5BZzpy7x+AStPBYKIA=="
 
