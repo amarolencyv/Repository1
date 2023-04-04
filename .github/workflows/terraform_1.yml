@@ -2,16 +2,16 @@ name: "terraform"
 
 on:
   push:
-    branches: 
-      - main
+    branches: { main }
   pull_request:
-    branches: {main}
+    branches: { main }
   workflow_dispatch:
 
 permissions: 
   id-token: write
   contents: write
 
+  
 jobs: 
   terraform-test:
     name: "terraform-test"
