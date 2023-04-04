@@ -10,7 +10,7 @@ terraform {
 provider "azurerm" {
     features {}
 }
-
+ 
 resource "azurerm_resource_group" "rg2" {
     name: "terraform-resource-group"
     locaton: "East US"
